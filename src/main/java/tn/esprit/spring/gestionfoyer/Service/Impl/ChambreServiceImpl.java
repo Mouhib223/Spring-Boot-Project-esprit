@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ChambreServiceImpl implements IChambreService {
     private ChambreReposetory ChambreRepo;
+
     @Override
     public List<Chambre> retrieveAllChambres() {
         return ChambreRepo.findAll();
@@ -31,5 +32,10 @@ public class ChambreServiceImpl implements IChambreService {
     @Override
     public Chambre retrieveChambre(long idChambre) {
         return null;
+    }
+
+    @Override
+     public List<Chambre> getByNomUniversite(String nomUniversite) {
+           return List.of();
     }
 }

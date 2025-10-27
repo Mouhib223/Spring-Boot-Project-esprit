@@ -1,9 +1,11 @@
 package tn.esprit.spring.gestionfoyer.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 @Entity
 @Getter
@@ -64,17 +66,22 @@ private Long idBloc;
     }
 
     public Set<Chambre> getChambres() {
-        return chambres;
+        return (Set<Chambre>) chambres;
     }
 
     public void setChambres(Set<Chambre> chambres) {
-        this.chambres = chambres;
+        this.chambres = (List<Chambre>) chambres;
     }
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "bloc")
+    private List<Chambre> chambres;
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "foyer_id")
     private Foyer foyer;
-
-    @OneToMany(mappedBy = "bloc", cascade = CascadeType.ALL)
-    private Set<Chambre> chambres;
+//    @ManyToOne
+//    @JoinColumn(name = "foyer_id")
+//    private Foyer foyer;
+//
+//    @OneToMany(mappedBy = "bloc", cascade = CascadeType.ALL)
+//    private Set<Chambre> chambres;
 }

@@ -27,7 +27,6 @@ public class UniversiteController {
         return iUniversiteService.updateUniversite(u);
     }
 
-    public Universite retrieveUniversite(long idUniversite) {
-        return iUniversiteService.retrieveUniversite(idUniversite);
-    }
+//    public Universite retrieveUniversite(long idUniversite) {
+//        return iUniversiteService.retrieveUniversite(idUniversite);// }
 }

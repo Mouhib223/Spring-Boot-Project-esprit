@@ -1,13 +1,22 @@
 package tn.esprit.spring.gestionfoyer.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 public class Reservation {
+    @Id
+    private String idReservation;
+    private Date anneeUniversitaire;
+    private boolean estValide;
+    @JsonIgnore
+    @ManyToMany
+    private List<Etudiant> etudiants;
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private String idReservation;
@@ -41,14 +50,14 @@ public class Reservation {
 //
 //    @ManyToMany(mappedBy = "reservations")
 //    private Set<Etudiant> etudiants;
-
-    @Id
-    private String idReservation;
-
-    @Temporal(TemporalType.DATE)
-    private Date anneeUniversitaire;
-
-    private boolean estValide;
+//new
+//    @Id
+//    private String idReservation;
+//
+//    @Temporal(TemporalType.DATE)
+//    private Date anneeUniversitaire;
+//
+//    private boolean estValide;
 
 }
 

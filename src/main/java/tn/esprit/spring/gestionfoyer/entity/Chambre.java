@@ -1,8 +1,10 @@
 package tn.esprit.spring.gestionfoyer.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -53,9 +55,11 @@ public class Chambre {
 
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
+    @JsonIgnore
+    @OneToMany
+    private List<Reservation> reservationList;
+    @JsonIgnore
+    @ManyToOne
+    private Bloc bloc;
 
-    // ✅ One-to-many WITHOUT join table (foreign key in Reservation)
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "chambre_id")  // Foreign key added in Reservation table
-    private Set<Reservation> reservations;
 }
