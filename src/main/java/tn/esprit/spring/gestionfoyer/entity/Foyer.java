@@ -1,10 +1,18 @@
 package tn.esprit.spring.gestionfoyer.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Foyer {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
