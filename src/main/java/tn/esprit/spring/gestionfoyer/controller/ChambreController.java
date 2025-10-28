@@ -17,15 +17,15 @@ public class ChambreController {
         return chambreService.retrieveAllChambres();
     }
     @PostMapping("/addChamre")
-    public Chambre addChambre(Chambre c) {
+    public Chambre addChambre(@RequestBody Chambre c) {
         return chambreService.addChambre(c);
     }
     @PutMapping("/updateChambre")
-    public Chambre updateChambre(Chambre c) {
+    public Chambre updateChambre(@RequestBody Chambre c) {
         return chambreService.updateChambre(c);
     }
     @GetMapping ("/retrieveChambre/{idChambre}")
-    public Chambre retrieveChambre(long idChambre) {
+    public Chambre retrieveChambre(@PathVariable long idChambre) {
         return chambreService.retrieveChambre(idChambre);
     }
 }

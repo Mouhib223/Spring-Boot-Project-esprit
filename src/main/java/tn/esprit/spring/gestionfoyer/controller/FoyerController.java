@@ -1,8 +1,7 @@
 package tn.esprit.spring.gestionfoyer.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.gestionfoyer.Service.Interface.IFoyerService;
 import tn.esprit.spring.gestionfoyer.entity.Foyer;
 
@@ -13,24 +12,24 @@ import java.util.List;
 @RequestMapping("foyerController")
 public class FoyerController {
     IFoyerService iFoyerService;
-
+    @GetMapping
     public List<Foyer> retrieveAllFoyers() {
         return iFoyerService.retrieveAllFoyers();
     }
-
-    public Foyer addFoyer(Foyer f) {
+    @PostMapping("/addFoyer")
+    public Foyer addFoyer(@RequestBody Foyer f) {
         return iFoyerService.addFoyer(f);
     }
-
-    public Foyer updateFoyer(Foyer f) {
+    @PutMapping("/updateFoyer")
+    public Foyer updateFoyer(@RequestBody Foyer f) {
         return iFoyerService.updateFoyer(f);
     }
-
-    public Foyer retrieveFoyer(long idFoyer) {
+    @GetMapping("/retrieveFoyer/{idFoyer}")
+    public Foyer retrieveFoyer(@PathVariable long idFoyer) {
         return iFoyerService.retrieveFoyer(idFoyer);
     }
-
-    public void removeFoyer(long idFoyer) {
+    @DeleteMapping("/removeFoyer/{idFoyer}")
+    public void removeFoyer(@PathVariable long idFoyer) {
         iFoyerService.removeFoyer(idFoyer);
     }
 }

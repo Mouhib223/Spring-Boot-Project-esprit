@@ -1,8 +1,7 @@
 package tn.esprit.spring.gestionfoyer.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.gestionfoyer.Service.Interface.IEtudiantService;
 import tn.esprit.spring.gestionfoyer.entity.Etudiant;
 
@@ -13,24 +12,24 @@ import java.util.List;
 @RequestMapping("etudiantController")
 public class EtudiantController {
     IEtudiantService etudiantService;
-
+    @GetMapping
     public List<Etudiant> retrieveAllEtudiants() {
         return etudiantService.retrieveAllEtudiants();
     }
-
-    public List<Etudiant> addEtudiants(List<Etudiant> etudiants) {
+    @PostMapping("/addEtudiant")
+    public List<Etudiant> addEtudiants(@RequestBody List<Etudiant> etudiants) {
         return etudiantService.addEtudiants(etudiants);
     }
-
-    public Etudiant updateEtudiant(Etudiant e) {
+    @PutMapping("/updateEtudiant")
+    public Etudiant updateEtudiant(@RequestBody Etudiant e) {
         return etudiantService.updateEtudiant(e);
     }
-
-    public Etudiant retrieveEtudiant(long idEtudiant) {
+    @GetMapping("/retrieveEtudiant/{idEtudiant}")
+    public Etudiant retrieveEtudiant(@PathVariable long idEtudiant) {
         return etudiantService.retrieveEtudiant(idEtudiant);
     }
-
-    public void removeEtudiant(long idEtudiant) {
+    @DeleteMapping("/removeEtudiant/{idEtudiant}")
+    public void removeEtudiant(@PathVariable long idEtudiant) {
         etudiantService.removeEtudiant(idEtudiant);
     }
 }
