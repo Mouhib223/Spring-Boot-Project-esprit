@@ -28,4 +28,9 @@ public class ChambreController {
     public Chambre retrieveChambre(@PathVariable long idChambre) {
         return chambreService.retrieveChambre(idChambre);
     }
+
+//    @GetMapping("/chambre/{nomUniversite}")
+//    public List<Chambre> getChambrebyNomUniversite(@PathVariable String nomUniversite) {
+//        return chambreService.getChambrebyNomUniversite(nomUniversite);
+//    }
 }

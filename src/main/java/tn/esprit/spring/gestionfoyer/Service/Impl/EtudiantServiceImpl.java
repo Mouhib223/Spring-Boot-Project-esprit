@@ -25,16 +25,17 @@ public class EtudiantServiceImpl implements IEtudiantService {
 
     @Override
     public Etudiant updateEtudiant(Etudiant e) {
-        return null;
+        return EtudiantRepo.save(e);
     }
 
     @Override
     public Etudiant retrieveEtudiant(long idEtudiant) {
-        return null;
+        return null;//EtudiantRepo.findById(idEtudiant).orElse(null);
     }
 
     @Override
     public void removeEtudiant(long idEtudiant) {
+        //EtudiantRepo.deleteById(idEtudiant);
 
     }
 }

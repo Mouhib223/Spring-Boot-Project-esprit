@@ -62,4 +62,43 @@ public class Chambre {
     @ManyToOne
     private Bloc bloc;
 
+    public Long getIdChambre() {
+        return idChambre;
+    }
+
+    public void setIdChambre(Long idChambre) {
+        this.idChambre = idChambre;
+    }
+
+    public Long getNumeroChambre() {
+        return numeroChambre;
+    }
+
+    public void setNumeroChambre(Long numeroChambre) {
+        this.numeroChambre = numeroChambre;
+    }
+
+    public TypeChambre getTypeC() {
+        return typeC;
+    }
+
+    public void setTypeC(TypeChambre typeC) {
+        this.typeC = typeC;
+    }
+
+    public List<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
+
+    public Bloc getBloc() {
+        return bloc;
+    }
+
+    public void setBloc(Bloc bloc) {
+        this.bloc = bloc;
+    }
 }

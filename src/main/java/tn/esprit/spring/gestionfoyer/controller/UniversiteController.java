@@ -14,7 +14,7 @@ import java.util.List;
 public class UniversiteController {
     IUniversiteService iUniversiteService;
     @GetMapping
-    public List<Etudiant> retrieveAllUniversities() {
+    public List<Universite> retrieveAllUniversities() {
         return iUniversiteService.retrieveAllUniversities();
     }
     @PostMapping("/addUniversite")
@@ -26,6 +26,11 @@ public class UniversiteController {
         return iUniversiteService.updateUniversite(u);
     }
 
-//    public Universite retrieveUniversite(long idUniversite) {
+    @PutMapping("/affectFoyerUniversite/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable long idFoyer,@PathVariable String nomUniversite) {
+        return iUniversiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+    //    public Universite retrieveUniversite(long idUniversite) {
 //        return iUniversiteService.retrieveUniversite(idUniversite);// }
 }

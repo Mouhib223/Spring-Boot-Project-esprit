@@ -20,7 +20,7 @@ public class BlocServiceImpl implements IBlocService {
 
     @Override
     public Bloc updateBloc(Bloc bloc) {
-        return null;
+        return BlocRepo.save(bloc);
     }
 
     @Override
@@ -30,11 +30,12 @@ public class BlocServiceImpl implements IBlocService {
 
     @Override
     public Bloc retrieveBloc(long idBloc) {
-        return null;
+        return BlocRepo.findById(idBloc).orElse(null);
     }
 
     @Override
     public void removeBloc(long idBloc) {
+        BlocRepo.deleteById(idBloc);
 
     }
 }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.gestionfoyer.Service.Interface.IFoyerService;
 import tn.esprit.spring.gestionfoyer.entity.Foyer;
+import tn.esprit.spring.gestionfoyer.entity.TypeChambre;
 import tn.esprit.spring.gestionfoyer.reposetory.FoyerReposetory;
 
 import java.util.List;
@@ -39,8 +40,18 @@ public class FoyerServiceImpl implements IFoyerService {
 
     }
 
+    @Override
+    public List<Foyer> getFoyerByNomEtudiantAndTypeChambre(String nomEtudiant, TypeChambre typeChambre) {
+        return foyerRepo.findByBlocsChambresReservationListEtudiantsNomEtudiantAndBlocsChambresTypeC(nomEtudiant,typeChambre);
+    }
     // add return foyerRepo.save(f)
     //update return foyerRepo.save(f)
     //retrivefoyer return foyerRepo.findById(idFoyer).orElse(Null) ken moch mawjoud yraja3 null w maya3melch mocjla
     //remove blach return foyerRepo.deletById(idFoyer)
+
+
+    @Override
+    public List<Foyer> getFoyerByBlocName(String nomBloc) {
+        return foyerRepo.findByBlocsNomBloc(nomBloc);
+    }
 }

@@ -36,4 +36,36 @@ private Long idFoyer;
 
     @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
     private Set<Bloc> blocs;
+
+    public Long getIdFoyer() {
+        return idFoyer;
+    }
+
+    public void setIdFoyer(Long idFoyer) {
+        this.idFoyer = idFoyer;
+    }
+
+    public String getNomFoyer() {
+        return nomFoyer;
+    }
+
+    public void setNomFoyer(String nomFoyer) {
+        this.nomFoyer = nomFoyer;
+    }
+
+    public Long getCapaciteFoyer() {
+        return capaciteFoyer;
+    }
+
+    public void setCapaciteFoyer(Long capaciteFoyer) {
+        this.capaciteFoyer = capaciteFoyer;
+    }
+
+    public Set<Bloc> getBlocs() {
+        return blocs;
+    }
+
+    public void setBlocs(Set<Bloc> blocs) {
+        this.blocs = blocs;
+    }
 }

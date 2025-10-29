@@ -14,7 +14,7 @@ import java.util.List;
 public class ReservationController {
     IReservationService iReservationService;
     @GetMapping
-    public List<Etudiant> retrieveAllReservation() {
+    public List<Reservation> retrieveAllReservation() {
         return iReservationService.retrieveAllReservation();
     }
     @PutMapping("/updateReservataion")
@@ -22,7 +22,7 @@ public class ReservationController {
         return iReservationService.updateReservation(res);
     }
     @GetMapping("/retrieveReservataion/{idReservation}")
-    public Reservation retrieveReservation(@PathVariable String idReservation) {
+    public Reservation retrieveReservation(@PathVariable long idReservation) {
         return iReservationService.retrieveReservation(idReservation);
     }
 }

@@ -19,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class Reservation {
     @Id
-    private String idReservation;
+    private long idReservation;
     private Date anneeUniversitaire;
     private boolean estValide;
     @JsonIgnore
@@ -67,6 +67,38 @@ public class Reservation {
 //
 //    private boolean estValide;
 
+
+    public long getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(long idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public Date getAnneeUniversitaire() {
+        return anneeUniversitaire;
+    }
+
+    public void setAnneeUniversitaire(Date anneeUniversitaire) {
+        this.anneeUniversitaire = anneeUniversitaire;
+    }
+
+    public boolean isEstValide() {
+        return estValide;
+    }
+
+    public void setEstValide(boolean estValide) {
+        this.estValide = estValide;
+    }
+
+    public List<Etudiant> getEtudiants() {
+        return etudiants;
+    }
+
+    public void setEtudiants(List<Etudiant> etudiants) {
+        this.etudiants = etudiants;
+    }
 }
 
 

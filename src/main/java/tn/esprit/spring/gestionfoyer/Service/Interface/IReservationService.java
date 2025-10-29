@@ -6,8 +6,8 @@ import tn.esprit.spring.gestionfoyer.entity.Reservation;
 import java.util.List;
 
 public interface IReservationService {
-    List<Etudiant> retrieveAllReservation();
+    List<Reservation> retrieveAllReservation();
     Reservation updateReservation (Reservation res);
-    Reservation retrieveReservation (String idReservation);
+    Reservation retrieveReservation (long idReservation);
 
 }

@@ -8,9 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ChambreReposetory extends JpaRepository<Chambre, Long> {
-      //List<Chambre> findByBlocFoyerUniversiteNomUniversite(String nomUniversite) {
-       //    return getByNomUniversite(nomUniversite);
-     //  }
+     // List<Chambre> findByChambrebyNomUniversite(String nomUniversite);
     }
 
 

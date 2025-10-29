@@ -14,17 +14,17 @@ import java.util.List;
 public class ReservationServiceImpl implements IReservationService {
     private ReservationReposetory ReservationRepo;
     @Override
-    public List<Etudiant> retrieveAllReservation() {
+    public List<Reservation> retrieveAllReservation() {
         return ReservationRepo.findAll();
     }
 
     @Override
     public Reservation updateReservation(Reservation res) {
-        return null;
+        return ReservationRepo.save(res);
     }
 
     @Override
-    public Reservation retrieveReservation(String idReservation) {
-        return null;
+    public Reservation retrieveReservation(long idReservation) {
+        return ReservationRepo.findById(idReservation).orElse(null);
     }
 }

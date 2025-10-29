@@ -26,16 +26,16 @@ public class ChambreServiceImpl implements IChambreService {
 
     @Override
     public Chambre updateChambre(Chambre c) {
-        return null;
+        return ChambreRepo.save(c);
     }
 
     @Override
     public Chambre retrieveChambre(long idChambre) {
-        return null;
+        return ChambreRepo.findById(idChambre).orElse(null);
     }
 
-    @Override
-     public List<Chambre> getByNomUniversite(String nomUniversite) {
-           return List.of();
-    }
+//    @Override
+//     public List<Chambre> getByNomUniversite(String nomUniversite) {
+//           return ChambreRepo.getChambrebyNomUniversite(nomUniversite);
+//    }
 }

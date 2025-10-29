@@ -2,6 +2,7 @@ package tn.esprit.spring.gestionfoyer.Service.Interface;
 
 import tn.esprit.spring.gestionfoyer.entity.Chambre;
 import tn.esprit.spring.gestionfoyer.entity.Foyer;
+import tn.esprit.spring.gestionfoyer.entity.TypeChambre;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ public interface IFoyerService {
     Foyer updateFoyer (Foyer f);
     Foyer retrieveFoyer (long idFoyer);
     void removeFoyer (long idFoyer);
-
+    List<Foyer>getFoyerByNomEtudiantAndTypeChambre(String nomEtudiant, TypeChambre typeChambre);
+    List<Foyer>getFoyerByBlocName(String nomBloc);
 }

@@ -6,9 +6,14 @@ import tn.esprit.spring.gestionfoyer.entity.Universite;
 import java.util.List;
 
 public interface IUniversiteService {
-    List<Etudiant> retrieveAllUniversities();
+    List<Universite> retrieveAllUniversities();
     Universite addUniversite (Universite u);
     Universite updateUniversite (Universite u);
-    Universite retrieveUniversite (long idUniversite);
+    void retrieveUniversite (long idUniversite);
+    public Universite affecterFoyerAUniversite (long idFoyer, String nomUniversite) ;
+
+
+
+
 
 }
